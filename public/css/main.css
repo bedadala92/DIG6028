@@ -1,0 +1,333 @@
+body, html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax{
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#bg_01{
+  background-image: url(http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/01_home_facade.png);
+  position: relative;
+}
+
+
+#bg_02{
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  /*left: 50%;*/
+  position: relative;
+  background-image: url(http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/02_deepam.jpg);
+  background-attachment: fixed;
+  /*background-position: right;*/
+  background-repeat: no-repeat;
+  background-size: contain;
+   background: -moz-linear-gradient(left, #00ff00 50%, #ff0000 50%);
+   background: -o-linear-gradient(left, #00ff00 50%, #ff0000 50%);
+   background: -ms-linear-gradient(left, #00ff00 50%, #ff0000 50%);
+   background: linear-gradient(left, #00ff00 50%, #ff0000 50%);
+}
+#circle1{
+    position: absolute;
+    top: 42%;
+    left: 46%;
+    /*background-color: rgba(0, 0, 0, 0);
+    border: 3px solid yellow;*/
+    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(89,72,13,0.3) 70%);
+    boxSizing:'border-box';
+    height:100px;
+    width:100px;
+    margin: 0 auto;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    animation-name: stretch;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+#circle2{
+    position: absolute;
+    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(89,72,13,0.3) 70%);
+    height:100px;
+    width:100px;
+    margin: 0 auto;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    animation-name: smallstretch;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes stretch {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(3);
+  }
+}
+
+@keyframes smallstretch {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(2);
+  }
+}
+
+
+#bg_03{
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Level 4: William Carey Baptizing */
+#carey{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-size: contain;
+  background-color: yellow;
+}
+.layer{
+  background-position: bottom right;
+  /*background-size: auto;*/
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  position: fixed;
+  z-index: -1;
+}
+.layer-01{
+  background-image: url('http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/04_carey01.png');
+}
+.layer-02{
+  background-image: url('http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/04_carey02.png');
+}
+.layer-03{
+  background-image: url('http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/04_carey03.png');
+}
+
+
+#poem{
+  height: 100%;
+  position:relative;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 21px;
+  font-style: italic;
+  /*font-weight: bold;*/
+  background-color: white;
+  justify-content: center;
+ }
+ #stanza{
+  height: 70%;
+  margin: auto;
+  position: absolute;
+  color: white;
+  top: 0; left: 0; bottom: 0; right: 0;
+  line-height: 150%;
+  -webkit-animation: smooth 5s ease-in;
+  -moz-animation: smooth 5s ease-in;
+  -o-animation: smooth 5s ease-in;
+  -ms-animation: smooth 5s ease-in;
+  animation: smooth 5s ease-in;
+ }
+ @-webkit-keyframes smooth {
+    0% { opacity: 0;
+      font-size: 18px;
+    }
+    100% { opacity: 1;
+      font-size: 21px;
+    }
+}
+#bg{
+  width: 400px;
+  height:80%;
+  background-color: orange;
+  opacity: 0.8;
+  position: absolute;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#slideshow{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /*animation*/
+
+  animation: slideShow 24s linear infinite 0s;
+  -o-animation: slideShow 24s linear infinite 0s;
+  -moz-animation: slideShow 24s linear infinite 0s;
+  -webkit-animation: slideShow 24s linear infinite 0s;
+}
+
+.pic-1 {
+  opacity: 1;
+  background: url("http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/05_01.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-2 {
+  animation-delay: 6s;
+  -o-animation-delay: 6s;
+  -moz--animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  background: url("http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/05_02.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-3 {
+  animation-delay: 12s;
+  -o-animation-delay: 12s;
+  -moz--animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+  background: url("http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/05_03.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-4 {
+  animation-delay: 18s;
+  -o-animation-delay: 18s;
+  -moz--animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+  background: url("http://www.visineat.com/devs/dev4/portfolio/photography/PortfolioPictures/05_04.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+  @keyframes
+slideShow {  0% {
+ opacity: 0;
+ transform:scale(1);
+ -ms-transform:scale(1);
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+ transform:scale(1.1);
+ -ms-transform:scale(1.1);
+}
+ 100% {
+ opacity: 0;
+ transform:scale(1);
+ -ms-transformm:scale(1);
+}
+}
+ @-o-keyframes
+slideShow {  0% {
+ opacity: 0;
+ -o-transform:scale(1);
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+ -o-transform:scale(1.1);
+}
+ 100% {
+ opacity: 0;
+ -o-transformm:scale(1);
+}
+}
+ @-moz-keyframes
+slideShow {  0% {
+ opacity: 0;
+ -moz-transform:scale(1);
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+ -moz-transform:scale(1.1);
+}
+ 100% {
+ opacity: 0;
+ -moz-transformm:scale(1);
+}
+}
+ @-webkit-keyframes
+slideShow {  0% {
+ opacity: 0;
+ -webkit-transform:scale(1);
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+ -webkit-transform:scale(1.1);
+}
+ 100% {
+ opacity: 0;
+ -webkit-transformm:scale(1);
+}
+}
+#anatomy{
+  position: relative;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(top left, #194c84, #0f868c);
+  background: -o-linear-gradient(top left, #194c84, #0f868c);
+  background: linear-gradient(to bottom right, #194c84, #0f868c); /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */ /* Standard syntax (must be last) */
+}
+#hindi{
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
