@@ -53,19 +53,108 @@
 //     }
 // };
 
-var myIndex = 0;
-carousel();
+// var myIndex = 0;
+// carousel();
+//
+// function carousel() {
+//     var i;
+//     var x = document.getElementsByTagName('img');
+//     for (i = 0; i < x.length; i++) {
+//        x[i].style.display = "none";
+//     }
+//     myIndex++;
+//     if (myIndex > x.length) {
+//       myIndex = 1;
+//     }
+//     x[myIndex-1].style.display = "block";
+//     setTimeout(carousel, 2000); // Change image every 2 seconds
+// }
 
-function carousel() {
-    var i;
-    var x = document.getElementsByTagName('img');
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {
-      myIndex = 1;
-    }
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+//floating language titles
+$(document).ready(function(){
+  var fullWidth = window.innerWidth;
+  var fullHeight = window.innerHeight;
+  $(".randomTitle").each(function(index,value){
+    $(value).css({"font-size":"75px","position":"relative","left": Math.round(Math.random() * fullWidth/2) + "px", "top":Math.round(Math.random() * fullHeight/2) + "px"});
+  });
+});
+
+//title animation
+var ctx = document.querySelector("canvas").getContext("2d"),
+dashlen = 220,
+dashOffset = dashLen,
+speed = 5,
+text = "Palm Leaves",
+x=30, i=0;
+ctx.font = "35px Libre Baskerville, serif";
+ctx.lineWidth = 5;
+ctx.lineJoin = "round";
+ctx.globalAlpha = 2/3;
+ctx.strokeStyle = ctx.fillStyle = "#000";
+
+(function loop() {
+      // clear canvas for each frame
+      ctx.clearRect(x, 0, 60, 150);
+
+      // calculate and set current line-dash for this char
+      ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]);
+
+      // reduce length of off-dash
+      dashOffset -= speed;
+
+      // draw char to canvas with current dash-length
+      ctx.strokeText(txt[i], x, 90);
+
+      // char done? no, the loop
+      if (dashOffset > 0) requestAnimationFrame(loop);
+      else {
+
+        // ok, outline done, lets fill its interior before next
+        ctx.fillText(txt[i], x, 90);
+
+        // reset line-dash length
+        dashOffset = dashLen;
+
+        // get x position to next char by measuring what we have drawn
+        // notice we offset it a little by random to increase realism
+        x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
+
+        // lets use an absolute transform to randomize y-position a little
+        ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
+
+        // and just cause we can, rotate it a little too to make it even
+        // more realistic
+        ctx.rotate(Math.random() * 0.005);
+
+        // if we still have chars left, loop animation again for this char
+        if (i < txt.length) requestAnimationFrame(loop);
+      }
+    })();  // just to self-invoke the loop
+
+    //slideshow
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1;}
+  if (n < 1) {slideIndex = slides.length;}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
