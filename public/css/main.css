@@ -11,6 +11,31 @@ body, html{
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  overflow: hidden;
+}
+#aligncenter{
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#anatomy{
+  position: relative;
+  height:100%;
+}
+#gradientbg{
+  position: relative;
+  height:100%;
+  background: -webkit-linear-gradient(top left, #194c84, #0f868c);
+  background: -o-linear-gradient(top left, #194c84, #0f868c);
+  background: linear-gradient(to bottom right, #194c84, #0f868c);
+}
+#mainfont{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  line-height:25px;
+  /*font-style: regular;*/
+  color:white;
 }
 
 #bg_01{
@@ -18,6 +43,31 @@ body, html{
   position: relative;
 }
 
+#maintitle{
+  position:relative;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 60px;
+  text-shadow: 4px 4px 5px black;
+  color:white;
+  z-index:2;
+  margin: auto;
+  top:30%;
+  height:100%;
+  text-align: center;
+}
+
+#subtitle{
+  text-shadow: 0px 0px 0px black;
+  position:relative;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 24px;
+  font-style: italic;
+  color:white;
+  z-index:3;
+  margin: auto;
+  height:300px;
+  text-align: center;
+}
 
 #bg_02{
   width: 100%;
@@ -35,13 +85,12 @@ body, html{
    background: -ms-linear-gradient(left, #00ff00 50%, #ff0000 50%);
    background: linear-gradient(left, #00ff00 50%, #ff0000 50%);
 }
+
 #circle1{
     position: absolute;
     top: 42%;
     left: 46%;
-    /*background-color: rgba(0, 0, 0, 0);
-    border: 3px solid yellow;*/
-    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(89,72,13,0.3) 70%);
+    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(241,155,0,0.4) 70%);
     boxSizing:'border-box';
     height:100px;
     width:100px;
@@ -55,7 +104,7 @@ body, html{
 
 #circle2{
     position: absolute;
-    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(89,72,13,0.3) 70%);
+    background: radial-gradient(circle,rgba(0,0,0,0) 0%,rgba(25,76,132,0.4) 70%);
     height:100px;
     width:100px;
     margin: 0 auto;
@@ -88,7 +137,7 @@ body, html{
 #bg_03{
   width: 100%;
   height: 100%;
-  background-color: lightblue;
+  background-color: white;
 }
 
 @keyframes dash {
@@ -100,7 +149,18 @@ body, html{
   }
 }
 
+#timeline{
+  width:100%;
+}
+
 /* Level 4: William Carey Baptizing */
+
+/*img #careyClip{
+  clip-path: url(#clipping);
+}*/
+/*#clipping{
+  height:100%;
+}*/
 #carey{
   height: 100%;
   overflow: hidden;
@@ -319,15 +379,68 @@ slideShow {  0% {
  -webkit-transformm:scale(1);
 }
 }
-#anatomy{
+
+
+#problems{
   position: relative;
-  background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(top left, #194c84, #0f868c);
-  background: -o-linear-gradient(top left, #194c84, #0f868c);
-  background: linear-gradient(to bottom right, #194c84, #0f868c); /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */ /* Standard syntax (must be last) */
+  height: 100%;
 }
-#hindi{
-  margin: auto;
+
+#quotes{
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  width:300px;
+}
+
+.randomTitle{
+  font-family: 'Libre Baskerville', serif;
+  animation-name: letters;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+.rows:first-of-type{background-color: red}
+.rows:nth-of-type(2){background-color: blue}
+.rows:nth-of-type(3){background-color: green}
+
+.rows{
+  height: 200px;
+  height: 33%; /* as @passatgt mentioned in the comment*/
+  height: calc(100% / 3);
+  display: inline-block;
+}
+
+@keyframes letters {
+0%{
+  transform: translate3d(10px, 0, 0px);
+
+}
+100%{
+  transform: translate3d(500px, 300px, 100px);
+}
+
+/* Slideshow*/
+
+.prev, .next {
+  cursor: pointer;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
